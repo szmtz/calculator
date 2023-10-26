@@ -15,12 +15,26 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentScreen = document.querySelector(".current");
 
   numbers.forEach((number) =>
-    number.addEventListener("click", function () {
+    number.addEventListener("click", function (e) {
       handleNumber(e.target.textContent);
-    })
-  );
-});
+      currentScreen.textContent = currentValue;
+    }))
+  
+operators.forEach((op) => op.addEventListener("click", function(e){
+  handleOperator(e.target.textContent)
+}))
+
+})
+
 
 function handleNumber(num) {
-  currentValue += number;
+  if(currentValue.length <= 5){
+    currentValue += num;
+  }
+}
+
+function handleOperator(op){
+ operator = op; 
+ previousValue = currentValue; 
+ currentValue = ''; 
 }
