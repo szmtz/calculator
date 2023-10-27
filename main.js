@@ -45,9 +45,8 @@ function handleNumber(num) {
   }
 }
 
-function handleOperator(op){
-  console.log(op); 
-//  operator = op; 
-//  previousValue = currentValue; 
-//  currentValue = ''; 
+function handleOperator(op){  
+ operator = op; 
+ previousValue = currentValue; 
+ currentValue = ''; 
 }
