@@ -23,20 +23,24 @@ numbers.forEach((number) =>
 operators.forEach((op) =>
     op.addEventListener("click", function (e) {
       handleOperator(e.target.textContent);
-//       previousScreen.textContent = previousValue + " " + operator;
-//       currentScreen.textContent = currentValue;
+      previousScreen.textContent = previousValue + " " + operator;
+      currentScreen.textContent = currentValue;
      }))
-    })
 
 
-// clear.addEventListener("click", function(){
-//   previousValue = '';
-//   currentValue = '';
-//   operator = '';
-//   previousScreen.textContent = currentValue;
-//   currentScreen.textContent = currentValue;
-// })
-// })
+clear.addEventListener("click", function(){
+  previousValue = '';
+  currentValue = '';
+  operator = '';
+  previousScreen.textContent = currentValue;
+  currentScreen.textContent = currentValue;
+  })
+
+  
+  equal.addEventListener("click", function(){
+    calculate()
+  })
+})
 
 
 function handleNumber(num) {
@@ -52,24 +56,21 @@ function handleOperator(op){
 }
 
 
-// function handleOperator(op) {
-//   operator = op;
-//   previousValue = currentValue;
-//   currentValue = ""; 
-// } 
-// function calculate(){
-//   previousValue = Number(previousValue); 
-//   currentValue = Number(currentValue); 
 
-//   if(operator === "+"){
-//     previousValue += currentValue; 
-//   } else if(operator === "-"){
-//     previousValue -= currentValue; 
-//   } else if(operator === "x"){
-//     previousValue *= currentValue; 
-//   } else {
-//     previousValue /= currentValue; 
-//   }
-// console.log(previousValue);
+function calculate(){
 
-// }
+previousValue = Number(previousValue); 
+currentValue = Number(currentValue); 
+
+  if(operator === "+"){
+    previousValue += currentValue; 
+  } else if(operator === "-"){
+    previousValue -= currentValue; 
+  } else if(operator === "x"){
+    previousValue *= currentValue; 
+  } else {
+    previousValue /= currentValue; 
+  }
+console.log(previousValue);
+
+}
