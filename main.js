@@ -22,19 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
   
 operators.forEach((op) => op.addEventListener("click", function(e){
   handleOperator(e.target.textContent)
-  previousScreen.textContent = previousValue + " " + operator; 
-  currentScreen.textContent = currentValue; 
+
+  // previousScreen.textContent = previousValue + " " + operator; 
+  // currentScreen.textContent = currentValue; 
 }))
-
-clear.addEventListener("click", function(){
-  previousValue = ''; 
-  currentValue = ''; 
-  operator = ''; 
-  previousScreen.textContent = currentValue; 
-  currentScreen.textContent = currentValue; 
 })
 
-})
+// clear.addEventListener("click", function(){
+//   previousValue = ''; 
+//   currentValue = ''; 
+//   operator = ''; 
+//   previousScreen.textContent = currentValue; 
+//   currentScreen.textContent = currentValue; 
+// })
+
+ 
 
 
 function handleNumber(num) {
@@ -44,7 +46,8 @@ function handleNumber(num) {
 }
 
 function handleOperator(op){
- operator = op; 
- previousValue = currentValue; 
- currentValue = ''; 
+  console.log(op); 
+//  operator = op; 
+//  previousValue = currentValue; 
+//  currentValue = ''; 
 }
